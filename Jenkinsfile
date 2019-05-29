@@ -1,25 +1,20 @@
 pipeline {
- 
-    environment {
-        CI = 'true'
-    }
+    agent any
+
     stages {
-
-         stage('Descargando Codigo') {
-            checkout scm
-         }
-
-        stage('Compilando, Build e imagen docker') {
-           if (isUnix()) {
-                sh './gradlew clean buildImage'
-           } else {
-          bat 'gradlew.bat clean build'
-           }
-        }
-     
-        stage('Deliver') {
+        stage('Build') {
             steps {
-               echo 'publicando codigo...'
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
