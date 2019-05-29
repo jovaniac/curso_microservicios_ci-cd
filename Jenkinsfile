@@ -5,7 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh './gradlew clean buildImage'
+                 script {
+                    try {
+                        sh './gradlew clean buildImage --no-daemon' //run a gradle task
+                    } finally {
+                    echo 'Building OK'
+                    }
+                }       
             }
         }
         stage('Test') {
