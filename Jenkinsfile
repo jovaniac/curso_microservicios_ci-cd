@@ -5,6 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                if (isUnix()) {
+                sh './gradlew clean buildImage'
+                } else {
+                 bat 'gradlew.bat clean build'
+                }
             }
         }
         stage('Test') {
