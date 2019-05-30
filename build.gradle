@@ -23,7 +23,7 @@ apply plugin: 'org.asciidoctor.convert'
 apply plugin: com.bmuschko.gradle.docker.DockerRemoteApiPlugin
 
 
-group = 'com.bancoazteca.clienteunico.credito'
+group = 'com.microservicios.clientes'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
