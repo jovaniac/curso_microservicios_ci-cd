@@ -7,7 +7,8 @@ pipeline {
                 echo 'Building..'
                  script {
                     try {
-                        sh './gradlew clean buildImage --no-daemon' //run a gradle task
+                        //sh './gradlew clean buildImage --no-daemon' //run a gradle task
+                        sh './gradlew build --no-daemon' //run a gradle task
                     } finally {
                     echo 'Building OK'
                     }
